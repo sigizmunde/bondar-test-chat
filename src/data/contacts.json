@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "Alice Freeman",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=female",
+            "online": true
+        },
+        {
+            "id": "2",
+            "name": "Josefina",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=female",
+            "online": true
+        },
+        {
+            "id": "3",
+            "name": "Velazquez",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+            "online": true
+        },
+        {
+            "id": "4",
+            "name": "Barrera",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=female",
+            "online": true
+        },
+        {
+            "id": "5",
+            "name": "Your Buddy",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+            "online": true
+        },
+        {
+            "id": "6",
+            "name": "Your Mom",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=female",
+            "online": true
+        },
+        {
+            "id": "7",
+            "name": "Xena",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=female",
+            "online": true
+        },
+        {
+            "id": "8",
+            "name": "Bender Bending Rodriguez",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+            "online": true
+        },
+        {
+            "id": "9",
+            "name": "Lisa Simpson",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=female",
+            "online": true
+        },
+        {
+            "id": "10",
+            "name": "Jamie Hyneman",
+            "avatar": "https://xsgames.co/randomusers/avatar.php?g=male",
+            "online": true
+        }
+    ]
+}
