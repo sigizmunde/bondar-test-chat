@@ -6,8 +6,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<br />} />
-        <Route path="/:id" element={<ChatWindow />} />
+        <Route index element={<div>Choose a chat</div>} />
+        <Route path="/chat/:id" element={<ChatWindow />} />
       </Route>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

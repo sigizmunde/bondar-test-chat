@@ -26,7 +26,7 @@ const ChatList = ({ chats }) => {
             text = "<no messages yet>",
             datetime = "new chat",
           }) => (
-            <ContactLi key={id} onClick={() => navigate(`/${id}`)}>
+            <ContactLi key={id} onClick={() => navigate(`/chat/${id}`)}>
               <Avatar src={avatar} alt="avatar" online={online} />
               <Info>
                 <Caption>

@@ -21,7 +21,9 @@ const ChatWindow = () => {
   const contact = useSelector(getContacts).find(
     ({ id: contact_id }) => contact_id === id
   );
-  const { name, avatar, online } = contact;
+  const { name, avatar, online } = contact
+    ? contact
+    : { name: "", avatar: "", online: false };
   const messages = useSelector(getMessages).filter(
     ({ contact_id }) => contact_id === id
   );
@@ -29,7 +31,9 @@ const ChatWindow = () => {
   return (
     <ChWindow>
       <ContactPanel>
-        <Avatar src={avatar} alt="current chat avatar" online={online} />
+        {avatar !== "" && (
+          <Avatar src={avatar} alt="current chat avatar" online={online} />
+        )}
         <p>{name}</p>
       </ContactPanel>
       <ChatPanel>
