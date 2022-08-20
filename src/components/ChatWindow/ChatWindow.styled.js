@@ -13,9 +13,11 @@ export const ContactPanel = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 24px;
+  padding: 12px 16px;
   background-color: var(--secondary-back-color);
+  border-bottom: var(--border);
   & p {
+    margin: 0;
     font-size: 18px;
     font-weight: 500;
   }
@@ -30,6 +32,7 @@ export const ChatPanel = styled.div`
   padding: 12px;
   overflow-y: scroll;
   background-color: var(--textarea-color);
+  border-bottom: var(--border);
 `;
 
 export const ChatMessage = styled.div`

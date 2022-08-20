@@ -15,6 +15,7 @@ export const PanelHeader = styled.div`
   height: auto;
   padding: 12px;
   background-color: var(--secondary-back-color);
+  border-bottom: var(--border);
 `;
 
 export const ChatHead = styled.div`

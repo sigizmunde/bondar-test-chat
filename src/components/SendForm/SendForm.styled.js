@@ -27,6 +27,8 @@ export const SendInput = styled.input`
   background-color: var(--textarea-color);
   border: var(--border);
   border-radius: 18px;
+  font-size: 15px;
+  font-weight: 400;
   &::placeholder {
     font-size: 15px;
     font-weight: 400;
