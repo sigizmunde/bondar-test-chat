@@ -45,7 +45,7 @@ const ChatWindow = () => {
       const temp = scrollRef.current.scrollTop;
       scrollRef.current.scrollTop += 50;
       i -= 1;
-      console.log(i);
+      // console.log(i);
       if (i <= 0 || temp === scrollRef.current.scrollTop) {
         clearInterval(scrollTimer);
       }
