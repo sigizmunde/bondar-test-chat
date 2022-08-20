@@ -27,6 +27,7 @@ import Avatar from "../Avatar/Avatar";
 import SearchForm from "../SearchForm/SearchForm.jsx";
 import { createContext, useContext, useEffect, useState } from "react";
 import generateListOfContacts from "../../utils/generateListOfContacts.js";
+import Login from "../Login/Login.jsx";
 
 export const FilterContext = createContext("");
 
@@ -61,11 +62,12 @@ const Layout = () => {
       <FilterContext.Provider value={filter}>
         <SidePanel>
           <PanelHeader>
-            <Avatar
+            <Login />
+            {/* <Avatar
               src={`https://xsgames.co/randomusers/assets/avatars/male/20.jpg`}
               alt="user avatar"
               online={true}
-            />
+            /> */}
             <SearchForm onSearch={handleSearch} />
           </PanelHeader>
           <ChatHead>

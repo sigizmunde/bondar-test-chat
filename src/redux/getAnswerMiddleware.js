@@ -1,4 +1,4 @@
-import { getAnswer } from "./answerAPI";
+import { getAnswer } from "../services/answerAPI";
 import { addMessage } from "./messagesSlice";
 
 const getAndStoreNewAnswer = async (store, id) => {

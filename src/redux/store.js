@@ -14,6 +14,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import getAnswerMiddleware from "./getAnswerMiddleware";
+import authReducer from "./authSlice";
 
 const persistConfig = {
   key: "test-chat",
@@ -25,6 +26,7 @@ const persistedReducer = persistReducer(
   combineReducers({
     contacts: contactsReducer,
     messages: messagesReducer,
+    auth: authReducer,
   })
 );
 
