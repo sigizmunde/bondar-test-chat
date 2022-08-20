@@ -5,6 +5,7 @@ export const ChWindow = styled.section`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-content: flex-start;
   gap: 0;
 `;
 
@@ -21,7 +22,7 @@ export const ContactPanel = styled.div`
 `;
 
 export const ChatPanel = styled.div`
-  height: 100%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

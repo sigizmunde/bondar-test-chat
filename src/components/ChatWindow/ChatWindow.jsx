@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { getContacts } from "../../redux/contactsSlice";
 import { getMessages } from "../../redux/messagesSlice";
 import Avatar from "../Avatar/Avatar";
@@ -12,11 +12,10 @@ import {
   MessageText,
   MessageTimeStamp,
 } from "./ChatWindow.styled";
+import SendForm from "../SendForm/SendForm";
 
 const ChatWindow = () => {
   const { id } = useParams();
-
-  const dispatch = useDispatch();
 
   const contact = useSelector(getContacts).find(
     ({ id: contact_id }) => contact_id === id
@@ -48,6 +47,7 @@ const ChatWindow = () => {
             </ChatMessage>
           ))}
       </ChatPanel>
+      <SendForm />
     </ChWindow>
   );
 };
