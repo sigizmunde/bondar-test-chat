@@ -31,3 +31,11 @@ export const ChatHead = styled.div`
     color: var(--accent-color);
   }
 `;
+
+export const H2 = styled.h2`
+  margin: 12px 0 0;
+`;
+
+export const Warn = styled.span`
+  color: var(--secondary-color);
+`;

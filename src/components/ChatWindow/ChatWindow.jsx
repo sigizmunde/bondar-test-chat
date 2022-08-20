@@ -5,17 +5,23 @@ import { getMessages } from "../../redux/messagesSlice";
 import Avatar from "../Avatar/Avatar";
 import { USFormatDateTime } from "../../utils/formatDateTime";
 import {
+  CaptionName,
   ChatMessage,
   ChatPanel,
   ChWindow,
   ContactPanel,
+  FlexWrap,
   MessageText,
   MessageTimeStamp,
+  Warn,
 } from "./ChatWindow.styled";
 import SendForm from "../SendForm/SendForm";
+import { useContext, useEffect, useRef } from "react";
+import { FilterContext } from "../Layout/Layout";
 
 const ChatWindow = () => {
   const { id } = useParams();
+  const filter = useContext(FilterContext);
 
   const contact = useSelector(getContacts).find(
     ({ id: contact_id }) => contact_id === id
@@ -24,8 +30,21 @@ const ChatWindow = () => {
     ? contact
     : { name: "", avatar: "", online: false };
   const messages = useSelector(getMessages).filter(
-    ({ contact_id }) => contact_id === id
+    ({ contact_id, text }) =>
+      contact_id === id && text.toLowerCase().includes(filter)
   );
+
+  const scrollRef = useRef();
+
+  useEffect(() => {
+    const scrollTimer = setInterval(() => {
+      const temp = scrollRef.current.scrollTop;
+      scrollRef.current.scrollTop += 25;
+      if (temp === scrollRef.current.scrollTop) {
+        clearInterval(scrollTimer);
+      }
+    }, 25);
+  }, [messages]);
 
   return (
     <ChWindow>
@@ -33,18 +52,21 @@ const ChatWindow = () => {
         {avatar !== "" && (
           <Avatar src={avatar} alt="current chat avatar" online={online} />
         )}
-        <p>{name}</p>
+        <CaptionName>{name}</CaptionName>
+        <Warn>{filter && ` — search results for "${filter}"`}</Warn>
       </ContactPanel>
-      <ChatPanel>
+      <ChatPanel ref={scrollRef}>
         {messages.length > 0 &&
           messages.map(({ id, datetime, text, incoming }) => (
-            <ChatMessage
-              key={id + datetime}
-              className={incoming ? "in" : "out"}
-            >
-              <MessageText>{text}</MessageText>
-              <MessageTimeStamp>{USFormatDateTime(datetime)}</MessageTimeStamp>
-            </ChatMessage>
+            <FlexWrap key={id + datetime}>
+              {incoming && <Avatar src={avatar} alt="avatar" online={false} />}
+              <ChatMessage className={incoming ? "in" : "out"}>
+                <MessageText>{text}</MessageText>
+                <MessageTimeStamp>
+                  {USFormatDateTime(datetime)}
+                </MessageTimeStamp>
+              </ChatMessage>
+            </FlexWrap>
           ))}
       </ChatPanel>
       <SendForm />

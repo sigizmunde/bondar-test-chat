@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const AvatarWrapper = styled.div`
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background-color: transparent;
   & img {
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background-color: var(--secondary-color);
   }

@@ -11,28 +11,44 @@ export const ChWindow = styled.section`
 
 export const ContactPanel = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 24px;
   padding: 12px 16px;
   background-color: var(--secondary-back-color);
   border-bottom: var(--border);
-  & p {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
-  }
+`;
+
+export const CaptionName = styled.p`
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+`;
+
+export const Warn = styled.p`
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--accent-color);
 `;
 
 export const ChatPanel = styled.div`
   flex-grow: 1;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 32px;
+  justify-content: flex-end; 
+  gap: 32px; */
   padding: 12px;
   overflow-y: scroll;
   background-color: var(--textarea-color);
   border-bottom: var(--border);
+  transition: all 250ms;
+`;
+
+export const FlexWrap = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
 `;
 
 export const ChatMessage = styled.div`

@@ -1,4 +1,5 @@
 import { Navigate, useNavigate } from "react-router-dom";
+import { USFormatDate } from "../../utils/formatDateTime";
 import Avatar from "../Avatar/Avatar";
 
 import {
@@ -11,7 +12,7 @@ import {
   Info,
 } from "./ChatList.styled";
 
-const ChatList = ({ chats }) => {
+const ChatList = ({ chats, filter }) => {
   const navigate = useNavigate();
 
   return (
@@ -26,12 +27,15 @@ const ChatList = ({ chats }) => {
             text = "<no messages yet>",
             datetime = "new chat",
           }) => (
-            <ContactLi key={id} onClick={() => navigate(`/chat/${id}`)}>
+            <ContactLi
+              key={id + datetime}
+              onClick={() => navigate(`/chat/${id}`)}
+            >
               <Avatar src={avatar} alt="avatar" online={online} />
               <Info>
                 <Caption>
                   <Name>{name}</Name>
-                  <Time>{datetime}</Time>
+                  <Time>{USFormatDate(datetime)}</Time>
                 </Caption>
                 <Text>{text}</Text>
               </Info>

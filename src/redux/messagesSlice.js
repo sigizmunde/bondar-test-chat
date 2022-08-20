@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import sortMessages from "../utils/sortMessages";
+import sortObjectsByDatetime from "../utils/sortObjectsByDatetime";
 
 const initialState = {
   items: [],
@@ -20,7 +20,7 @@ export const messagesSlice = createSlice({
     },
     overwriteMessages: (state, { payload }) => {
       try {
-        const sorted = sortMessages(payload);
+        const sorted = sortObjectsByDatetime(payload);
         state.items = sorted;
       } catch (err) {
         console.error(err);
