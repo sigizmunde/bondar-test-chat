@@ -7,10 +7,13 @@ export const Form = styled.form`
   padding: 0;
   & svg {
     position: absolute;
+    box-sizing: content-box;
     width: 12px;
     height: 12px;
-    transform: translate(12px, 8px);
+    padding: 0 12px;
+    transform: translateY(8px);
     fill: var(--secondary-color);
+    cursor: pointer;
   }
 `;
 

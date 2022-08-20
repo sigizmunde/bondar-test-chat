@@ -24,7 +24,7 @@ const SearchForm = ({ onSearch }) => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <svg>
+      <svg onClick={handleSubmit}>
         <use href={icons + "#icon-search"}></use>
       </svg>
       <Input
