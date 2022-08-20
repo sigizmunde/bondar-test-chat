@@ -1,97 +1,97 @@
 {
     "data": [
         {
-            "datetime": "2022-08-18T19: 20: 37.092Z",
+            "datetime": "2022-08-18T19:20:37.092Z",
             "contact_id": "1",
             "text": "C'mon!",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 20: 33.092Z",
+            "datetime": "2022-08-18T19:20:33.092Z",
             "contact_id": "1",
             "text": "Do I know you?",
             "incoming": false
         },
         {
-            "datetime": "2022-08-18T19: 20: 30.092Z",
+            "datetime": "2022-08-18T19:20:30.092Z",
             "contact_id": "1",
             "text": "Hi, dude!",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 19: 36.092Z",
+            "datetime": "2022-08-18T19:19:36.092Z",
             "contact_id": "2",
             "text": "Meeting has been postponed, sorry, bro",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 19: 30.092Z",
+            "datetime": "2022-08-18T19:19:30.092Z",
             "contact_id": "2",
             "text": "Hi there!",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 18: 47.092Z",
+            "datetime": "2022-08-18T19:18:47.092Z",
             "contact_id": "4",
             "text": "I'm on my way, get ready)))",
             "incoming": false
         },
         {
-            "datetime": "2022-08-18T19: 18: 37.092Z",
+            "datetime": "2022-08-18T19:18:37.092Z",
             "contact_id": "4",
             "text": "Hey! Whether you're answering or I ask someone else",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 18: 30.092Z",
+            "datetime": "2022-08-18T19:18:30.092Z",
             "contact_id": "4",
             "text": "Hi, dude! Maybe go out?",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 18: 29.092Z",
+            "datetime": "2022-08-18T19:18:29.092Z",
             "contact_id": "5",
             "text": "bad joke, bro",
             "incoming": false
         },
         {
-            "datetime": "2022-08-18T19: 17: 30.092Z",
+            "datetime": "2022-08-18T19:17:30.092Z",
             "contact_id": "3",
             "text": "Aloha!",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 17: 29.092Z",
+            "datetime": "2022-08-18T19:17:29.092Z",
             "contact_id": "5",
             "text": "Can u sell me those weedz?",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 17: 28.092Z",
+            "datetime": "2022-08-18T19:17:28.092Z",
             "contact_id": "6",
             "text": "Hi, Mark says you have a great piece of fiberglass. Hehehe))) I'd come and get some",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 16: 27.092Z",
+            "datetime": "2022-08-18T19:16:27.092Z",
             "contact_id": "7",
             "text": "Mom says you'll stay this year?",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T19: 15: 25.092Z",
+            "datetime": "2022-08-18T19:15:25.092Z",
             "contact_id": "8",
             "text": "No, my answer is no. Definetely not!",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T18: 20: 30.092Z",
+            "datetime": "2022-08-18T18:20:30.092Z",
             "contact_id": "9",
             "text": "Go get it!)",
             "incoming": true
         },
         {
-            "datetime": "2022-08-18T18: 11: 21.092Z",
+            "datetime": "2022-08-18T18:11:21.092Z",
             "contact_id": "10",
             "text": "So... This time red, right? We're waiting anyway!",
             "incoming": true
