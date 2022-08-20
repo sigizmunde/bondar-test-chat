@@ -36,11 +36,17 @@ const ChatWindow = () => {
 
   const scrollRef = useRef();
 
+  // scroll down effect
   useEffect(() => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollTop = scrollRef.current.scrollHeight - 1000;
+    let i = 100;
     const scrollTimer = setInterval(() => {
       const temp = scrollRef.current.scrollTop;
-      scrollRef.current.scrollTop += 25;
-      if (temp === scrollRef.current.scrollTop) {
+      scrollRef.current.scrollTop += 50;
+      i -= 1;
+      console.log(i);
+      if (i <= 0 || temp === scrollRef.current.scrollTop) {
         clearInterval(scrollTimer);
       }
     }, 25);

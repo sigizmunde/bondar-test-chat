@@ -37,7 +37,9 @@ const ChatList = ({ chats, filter }) => {
                   <Name>{name}</Name>
                   <Time>{USFormatDate(datetime)}</Time>
                 </Caption>
-                <Text>{text}</Text>
+                <Text>
+                  {text?.length > 36 ? text.slice(0, 32).trim() + "..." : text}
+                </Text>
               </Info>
             </ContactLi>
           )
