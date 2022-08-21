@@ -17,6 +17,7 @@ import {
   ChatHead,
   H2,
   LayoutContainer,
+  MiddleHeading,
   PanelHeader,
   Warn,
 } from "./Layout.styled.js";
@@ -27,6 +28,7 @@ import generateListOfContacts from "../../utils/generateListOfContacts.js";
 import Login from "../Login/Login.jsx";
 import { getContacts, getMessages, getIsLoading } from "../../redux/selectors";
 import Loader from "../Loader/Loader.jsx";
+import SearchList from "../SearchList/SearchList.jsx";
 
 export const FilterContext = createContext("");
 
@@ -40,7 +42,14 @@ const Layout = () => {
   if (messages?.length === 0) dispatch(overwriteMessages(messagesJSON.data));
 
   const [filter, setFilter] = useState("");
+  const [filteredContacts, setFilteredContacts] = useState([]);
   const [contactList, setContactList] = useState([]);
+
+  useEffect(() => {
+    setFilteredContacts(
+      contacts.filter(({ name }) => name.toLowerCase().includes(filter))
+    );
+  }, [filter, contacts]);
 
   useEffect(() => {
     setContactList(
@@ -67,6 +76,15 @@ const Layout = () => {
           <ChatHead>
             <H2>Chats{filter !== "" && <Warn> — search results:</Warn>}</H2>
           </ChatHead>
+          {filter && filteredContacts?.length > 0 && (
+            <>
+              <MiddleHeading>Contacts found:</MiddleHeading>
+              <SearchList contacts={filteredContacts} />
+            </>
+          )}
+          {filter && contacts?.length && (
+            <MiddleHeading>Messages found:</MiddleHeading>
+          )}
           <ChatList chats={contactList} />
         </SidePanel>
         <Outlet />

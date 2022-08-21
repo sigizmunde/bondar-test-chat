@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { USFormatDate } from "../../utils/formatDateTime";
 import Avatar from "../Avatar/Avatar";
 
@@ -12,7 +12,7 @@ import {
   Info,
 } from "./ChatList.styled";
 
-const ChatList = ({ chats, filter }) => {
+const ChatList = ({ chats }) => {
   const navigate = useNavigate();
 
   return (

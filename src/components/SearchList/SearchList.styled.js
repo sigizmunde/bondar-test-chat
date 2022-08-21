@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-export const ChList = styled.ul`
+export const SchList = styled.ul`
   flex-grow: 1;
   list-style: none;
   margin: 0;
   padding: 0;
+  min-height: 156px;
   max-height: 100%;
   overflow-y: scroll;
 `;
 
-export const ContactLi = styled.li`
+export const SearchContactLi = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,13 +51,4 @@ export const Time = styled.span`
   font-style: normal;
   line-height: 1.25;
   color: var(--main-color);
-`;
-
-export const Text = styled.p`
-  margin: 0;
-  font-size: 12px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.25;
-  color: var(--secondary-color);
 `;

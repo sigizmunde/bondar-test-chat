@@ -8,7 +8,6 @@ import { getUser } from "../../redux/selectors";
 const Login = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-  console.log("user ", user);
 
   const handleLogin = () => {
     dispatch(authOperation());
