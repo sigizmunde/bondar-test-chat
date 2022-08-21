@@ -15,7 +15,7 @@ export const AvatarWrapper = styled.div`
   & svg {
     display: block;
     position: absolute;
-    right: -8px;
+    right: -6px;
     bottom: -4px;
     width: 16px;
     height: 16px;
