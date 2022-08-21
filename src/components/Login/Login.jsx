@@ -34,7 +34,7 @@ const Login = () => {
       )}
       {user && (
         <>
-          <Avatar src={user.avatar} alt={user.name} online={true} />
+          <Avatar src={user.photoURL} alt={user.displayName} online={true} />
           <LogoutButton type="button" onClick={handleLogout}>
             Log out
           </LogoutButton>

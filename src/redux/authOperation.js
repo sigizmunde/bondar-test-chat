@@ -5,16 +5,15 @@ import { authRequest, authSuccess, authReject } from "./authActions";
 export const authOperation = () => (dispatch, getState) => {
   dispatch(authRequest());
   console.log("starting request");
-
   signInWithPopup(auth, googleProvider)
     .then((result) => {
       console.log("resolved with ", result);
-      const { accessToken, displayName, photoURL } = result.user;
-      //   const credential = googleProvider.credentialFromResult(result);
-      //   const token = credential.accessToken;
+      const { displayName, photoURL, accessToken } = result.user;
+      // const credential = googleProvider.credentialFromResult(result);
+      // const token = credential.accessToken;
       dispatch(
         authSuccess({
-          user: { name: displayName, avatar: photoURL },
+          user: { displayName, photoURL, accessToken },
           token: accessToken,
         })
       );
