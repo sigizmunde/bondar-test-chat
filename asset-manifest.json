@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/bondar-test-chat/static/css/main.1dfc886d.css",
-    "main.js": "/bondar-test-chat/static/js/main.5886e852.js",
+    "main.js": "/bondar-test-chat/static/js/main.3f33f43b.js",
     "static/js/787.af65e60c.chunk.js": "/bondar-test-chat/static/js/787.af65e60c.chunk.js",
     "static/media/icons.svg": "/bondar-test-chat/static/media/icons.2469e1484af61649e8ed7a114c15ed86.svg",
     "static/media/rotate.svg": "/bondar-test-chat/static/media/rotate.d0d161d805d7081932bc2770791ede8b.svg",
     "index.html": "/bondar-test-chat/index.html",
     "main.1dfc886d.css.map": "/bondar-test-chat/static/css/main.1dfc886d.css.map",
-    "main.5886e852.js.map": "/bondar-test-chat/static/js/main.5886e852.js.map",
+    "main.3f33f43b.js.map": "/bondar-test-chat/static/js/main.3f33f43b.js.map",
     "787.af65e60c.chunk.js.map": "/bondar-test-chat/static/js/787.af65e60c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1dfc886d.css",
-    "static/js/main.5886e852.js"
+    "static/js/main.3f33f43b.js"
   ]
 }
