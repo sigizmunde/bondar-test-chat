@@ -40,6 +40,7 @@ const SendForm = () => {
         type="text"
         name="message"
         placeholder="Type your message"
+        autoComplete="off"
         value={messageText}
         onChange={handleChange}
       ></SendInput>

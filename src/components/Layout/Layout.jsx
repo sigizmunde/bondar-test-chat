@@ -1,15 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  removeContact,
-  addContact,
-  overwriteContacts,
-} from "../../redux/contactsSlice.js";
-import {
-  removeMessage,
-  addMessage,
-  overwriteMessages,
-} from "../../redux/messagesSlice.js";
+import { overwriteContacts } from "../../redux/contactsSlice.js";
+import { overwriteMessages } from "../../redux/messagesSlice.js";
 import messagesJSON from "../../data/messages.json";
 import contactsJSON from "../../data/contacts.json";
 import ChatList from "../ChatList/ChatList.jsx";

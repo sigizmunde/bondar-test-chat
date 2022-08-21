@@ -25,7 +25,7 @@ const ChatList = ({ chats }) => {
             avatar,
             online,
             text = "<no messages yet>",
-            datetime = "new chat",
+            datetime = 0,
           }) => (
             <ContactLi
               key={id + datetime}
@@ -35,7 +35,7 @@ const ChatList = ({ chats }) => {
               <Info>
                 <Caption>
                   <Name>{name}</Name>
-                  <Time>{USFormatDate(datetime)}</Time>
+                  <Time>{datetime ? USFormatDate(datetime) : "new chat"}</Time>
                 </Caption>
                 <Text>
                   {text?.length > 36 ? text.slice(0, 32).trim() + "..." : text}

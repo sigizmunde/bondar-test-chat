@@ -43,12 +43,3 @@ export const Name = styled.span`
   line-height: 1.25;
   color: var(--main-color);
 `;
-
-export const Time = styled.span`
-  margin: 0;
-  font-size: 12px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.25;
-  color: var(--main-color);
-`;

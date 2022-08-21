@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { USFormatDate } from "../../utils/formatDateTime";
 import Avatar from "../Avatar/Avatar";
 
 import {
@@ -7,8 +6,6 @@ import {
   SchList,
   SearchContactLi,
   Name,
-  Time,
-  Text,
   Info,
 } from "./SearchList.styled";
 

@@ -33,6 +33,7 @@ const SearchForm = ({ onSearch }) => {
         type="text"
         name="search"
         placeholder="Search or start new chat"
+        autoComplete="off"
         value={searchString}
         onChange={handleChange}
       ></Input>
