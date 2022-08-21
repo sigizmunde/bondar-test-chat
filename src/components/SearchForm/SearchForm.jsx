@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form, Input } from "./SearchForm.styled";
+import { DeleteIcon, FirstIcon, Form, Input } from "./SearchForm.styled";
 import icons from "../../image/icons.svg";
 
 const SearchForm = ({ onSearch }) => {
@@ -22,11 +22,13 @@ const SearchForm = ({ onSearch }) => {
     onSearch(searchString);
   };
 
+  const handleClear = () => setSearchString("");
+
   return (
     <Form onSubmit={handleSubmit}>
-      <svg onClick={handleSubmit}>
+      <FirstIcon onClick={handleSubmit}>
         <use href={icons + "#icon-search"}></use>
-      </svg>
+      </FirstIcon>
       <Input
         type="text"
         name="search"
@@ -34,6 +36,11 @@ const SearchForm = ({ onSearch }) => {
         value={searchString}
         onChange={handleChange}
       ></Input>
+      {searchString.trim() !== "" && (
+        <DeleteIcon onClick={handleClear}>
+          <use href={icons + "#icon-clear"}></use>
+        </DeleteIcon>
+      )}
     </Form>
   );
 };

@@ -5,16 +5,17 @@ export const Form = styled.form`
   margin: 0;
   margin-top: 16px;
   padding: 0;
-  & svg {
-    position: absolute;
-    box-sizing: content-box;
-    width: 12px;
-    height: 12px;
-    padding: 0 12px;
-    transform: translateY(8px);
-    fill: var(--secondary-color);
-    cursor: pointer;
-  }
+`;
+
+export const FirstIcon = styled.svg`
+  position: absolute;
+  box-sizing: content-box;
+  width: 12px;
+  height: 12px;
+  padding: 0 12px;
+  transform: translateY(8px);
+  fill: var(--secondary-color);
+  cursor: pointer;
 `;
 
 export const Input = styled.input`
@@ -30,4 +31,15 @@ export const Input = styled.input`
     font-weight: 700;
     color: var(--secondary-color);
   }
+`;
+
+export const DeleteIcon = styled.svg`
+  position: absolute;
+  box-sizing: content-box;
+  width: 16px;
+  height: 16px;
+  padding: 12px;
+  transform: translate(-36px, -6px);
+  fill: var(--accent-color);
+  cursor: pointer;
 `;

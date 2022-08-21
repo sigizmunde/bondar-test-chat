@@ -54,5 +54,4 @@ export const MiddleHeading = styled.div`
   color: var(--inverted-color);
   background-color: var(--accent-color);
   border-bottom: var(--border);
-  cursor: pointer;
 `;
