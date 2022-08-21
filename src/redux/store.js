@@ -15,6 +15,7 @@ import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";
 import getAnswerMiddleware from "./getAnswerMiddleware";
 import authReducer from "./authSlice";
+import syncFirestoreMiddleware from "./syncFirestoreMiddlware";
 
 const persistConfig = {
   key: "test-chat",
@@ -39,6 +40,7 @@ export const store = configureStore({
       },
     }),
     getAnswerMiddleware,
+    syncFirestoreMiddleware,
   ],
 });
 

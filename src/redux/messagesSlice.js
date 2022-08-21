@@ -34,5 +34,3 @@ export const { addMessage, removeMessage, overwriteMessages } =
   messagesSlice.actions;
 
 export default messagesSlice.reducer;
-
-export const getMessages = (state) => state.messages.items;

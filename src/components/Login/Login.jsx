@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { authOperation } from "../../redux/authOperation";
-import { getUser, removeUser } from "../../redux/authSlice";
+import { removeUser } from "../../redux/authSlice";
 import Avatar from "../Avatar/Avatar";
-import { LoginButton, LoginPanel, LogoutButton } from "./Login.styled";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { LoginButton, LoginPanel, LogoutButton, UserDiv } from "./Login.styled";
+import { getUser } from "../../redux/selectors";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,11 +22,14 @@ const Login = () => {
     <LoginPanel>
       {!user && (
         <>
-          <Avatar
-            src={`https://xsgames.co/randomusers/assets/avatars/male/20.jpg`}
-            alt="default user"
-            online={true}
-          />
+          <UserDiv>
+            <Avatar
+              src={`https://xsgames.co/randomusers/assets/avatars/male/20.jpg`}
+              alt="default user"
+              online={true}
+            />
+            <p>test user | please login</p>
+          </UserDiv>
           <LoginButton type="button" onClick={handleLogin}>
             Log in
           </LoginButton>
@@ -34,7 +37,14 @@ const Login = () => {
       )}
       {user && (
         <>
-          <Avatar src={user.photoURL} alt={user.displayName} online={true} />
+          <UserDiv>
+            <Avatar src={user.photoURL} alt={user.displayName} online={true} />
+            <p>
+              {user.displayName.length > 26
+                ? user.displayName.slice(0, 23) + "..."
+                : user.displayName}
+            </p>
+          </UserDiv>
           <LogoutButton type="button" onClick={handleLogout}>
             Log out
           </LogoutButton>

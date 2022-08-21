@@ -1,11 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { signOut } from "firebase/auth";
+import { auth } from "../services/firebase";
 import { authReject, authRequest, authSuccess } from "./authActions";
 
 const authSlice = createSlice({
   name: "auth",
   initialState: { user: null, token: null, isLoading: false, error: null },
   reducers: {
-    removeUser(state, { payload }) {
+    removeUser: (state, { payload }) => {
+      signOut(auth)
+        // .then((response) => console.log(response))
+        .catch((err) => console.warn(err));
       return { ...state, user: null, token: null };
     },
   },
@@ -28,8 +33,3 @@ const authSlice = createSlice({
 export const { removeUser } = authSlice.actions;
 
 export default authSlice.reducer;
-
-export const getUser = (state) => state.auth.user;
-export const getToken = (state) => state.auth.token;
-export const getIsLoading = (state) => state.auth.isLoading;
-export const getError = (state) => state.auth.error;

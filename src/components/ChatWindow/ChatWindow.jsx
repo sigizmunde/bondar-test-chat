@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getContacts } from "../../redux/contactsSlice";
-import { getMessages } from "../../redux/messagesSlice";
+import { getContacts, getMessages } from "../../redux/selectors";
 import Avatar from "../Avatar/Avatar";
 import { USFormatDateTime } from "../../utils/formatDateTime";
 import {

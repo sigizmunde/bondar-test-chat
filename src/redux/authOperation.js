@@ -8,12 +8,12 @@ export const authOperation = () => (dispatch, getState) => {
   signInWithPopup(auth, googleProvider)
     .then((result) => {
       console.log("resolved with ", result);
-      const { displayName, photoURL, accessToken } = result.user;
+      const { email, displayName, photoURL, accessToken } = result.user;
       // const credential = googleProvider.credentialFromResult(result);
       // const token = credential.accessToken;
       dispatch(
         authSuccess({
-          user: { displayName, photoURL, accessToken },
+          user: { email, displayName, photoURL, accessToken },
           token: accessToken,
         })
       );

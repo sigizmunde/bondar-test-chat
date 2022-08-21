@@ -7,6 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import { store, persistor } from "./redux/store";
+import "./services/firebase";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

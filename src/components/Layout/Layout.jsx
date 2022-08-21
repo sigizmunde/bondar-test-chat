@@ -1,13 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  getContacts,
   removeContact,
   addContact,
   overwriteContacts,
 } from "../../redux/contactsSlice.js";
 import {
-  getMessages,
   removeMessage,
   addMessage,
   overwriteMessages,
@@ -23,17 +21,18 @@ import {
   Warn,
 } from "./Layout.styled.js";
 import { SidePanel } from "../SidePanel/SidePanel.styled";
-import Avatar from "../Avatar/Avatar";
 import SearchForm from "../SearchForm/SearchForm.jsx";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import generateListOfContacts from "../../utils/generateListOfContacts.js";
 import Login from "../Login/Login.jsx";
+import { getContacts, getMessages, getIsLoading } from "../../redux/selectors";
+import Loader from "../Loader/Loader.jsx";
 
 export const FilterContext = createContext("");
 
 const Layout = () => {
   const dispatch = useDispatch();
-
+  const isLoading = useSelector(getIsLoading);
   const contacts = useSelector(getContacts);
   const messages = useSelector(getMessages);
 
@@ -63,11 +62,6 @@ const Layout = () => {
         <SidePanel>
           <PanelHeader>
             <Login />
-            {/* <Avatar
-              src={`https://xsgames.co/randomusers/assets/avatars/male/20.jpg`}
-              alt="user avatar"
-              online={true}
-            /> */}
             <SearchForm onSearch={handleSearch} />
           </PanelHeader>
           <ChatHead>
@@ -77,6 +71,7 @@ const Layout = () => {
         </SidePanel>
         <Outlet />
       </FilterContext.Provider>
+      {isLoading && <Loader />}
     </LayoutContainer>
   );
 };

@@ -24,5 +24,3 @@ export const { addContact, removeContact, overwriteContacts } =
   contactsSlice.actions;
 
 export default contactsSlice.reducer;
-
-export const getContacts = (state) => state.contacts.items;
