@@ -51,7 +51,7 @@ const Layout = () => {
       const sender = contacts.find(({ id }) => id === contact_id);
       toast(`${sender.name}: ${text}`);
     }
-  }, [messages, contacts]);
+  }, [messages, contacts, id]);
 
   useEffect(() => {
     setFilteredContacts(
