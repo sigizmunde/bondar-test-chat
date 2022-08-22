@@ -54,10 +54,10 @@ messages: {
 
 There are two simplifications made in this demo application
 
-1. Firebase/Firestore is used for duplicating user messaging data on every update and storing it till the next time the user will login. This means, if the user is logged on several instances of the app, every instance will overwrite the database independently. The instance of data with the latest message will be stored, other instances will lose thei data after shutting down.
+1. Firebase/Firestore is used for duplicating user messaging data on every update and storing it till the next time the user will log in. This means, if the user is logged on several instances of the app, every instance will overwrite the database independently. The instance of data with the latest message will be stored, other instances will lose their data after shutting down.
 
 2. Firestore is being operated in a test mode. This means it is opened to read and write data without applying any user authentication policy. Though users authenticate inside the app with Google tokens, the tokens are being stored in the app but don't apply on writing to database.
 
 # contact information
 
-You may write me on [email](illya.bondar.ukraine@gmail.com) or via [Telegram](https://t.me/iliyabinocular)
+You may write me on [email](mailto:illya.bondar.ukraine@gmail.com) or via [Telegram](https://t.me/iliyabinocular)
