@@ -1,4 +1,6 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
 import { overwriteContacts } from "../../redux/contactsSlice.js";
 import { overwriteMessages } from "../../redux/messagesSlice.js";
@@ -36,6 +38,19 @@ const Layout = () => {
   const [filter, setFilter] = useState("");
   const [filteredContacts, setFilteredContacts] = useState([]);
   const [contactList, setContactList] = useState([]);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const { contact_id, text, datetime, incoming } =
+      messages[messages.length - 1];
+    const timeThen = new Date(datetime);
+    const timeNow = new Date();
+    if (incoming && contact_id !== id && timeNow - timeThen < 100) {
+      const sender = contacts.find(({ id }) => id === contact_id);
+      toast(`${sender.name}: ${text}`);
+    }
+  }, [messages, contacts]);
 
   useEffect(() => {
     setFilteredContacts(
@@ -82,6 +97,17 @@ const Layout = () => {
         <Outlet />
       </FilterContext.Provider>
       {isLoading && <Loader />}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </LayoutContainer>
   );
 };
