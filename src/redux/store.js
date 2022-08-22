@@ -16,6 +16,7 @@ import { combineReducers } from "redux";
 import getAnswerMiddleware from "./getAnswerMiddleware";
 import authReducer from "./authSlice";
 import syncFirestoreMiddleware from "./syncFirestoreMiddlware";
+import isLoadingReducer from "./isLoadingSlice";
 
 const persistConfig = {
   key: "test-chat",
@@ -32,7 +33,7 @@ const persistedReducer = persistReducer(
 );
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: { persisted: persistedReducer, isLoading: isLoadingReducer },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({
       serializableCheck: {

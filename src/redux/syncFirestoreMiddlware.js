@@ -7,8 +7,8 @@ import { removeUser } from "./authSlice";
 import { loadInitialUserData } from "./loadInitialUserData";
 
 const updateFirebase = async (store) => {
-  const { contacts, messages } = store.getState();
-  const { user } = store.getState().auth;
+  const { contacts, messages } = store.getState().persisted;
+  const { user } = store.getState().persisted.auth;
   const user_id = !user ? "test_user" : user.email;
   await setDoc(doc(db, user_id, "chat"), {
     contacts,

@@ -26,7 +26,6 @@ export const USFormatDate = (datetimeString) => {
 
     // const formattedString = month + "/" + day + "/" + year;
     const formattedString = date.toLocaleDateString("en-US", options);
-    console.log(formattedString);
     return formattedString;
   } catch (err) {
     console.error(err);

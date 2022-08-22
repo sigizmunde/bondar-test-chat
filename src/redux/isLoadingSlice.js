@@ -12,4 +12,4 @@ const isLoadingSlice = createSlice({
 
 export const { setLoading } = isLoadingSlice.actions;
 
-export default isLoadingSlice;
+export default isLoadingSlice.reducer;
