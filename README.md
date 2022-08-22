@@ -11,14 +11,14 @@ This app is a chat simulation with a fixed set of contacts. You may write messag
 Application features signing-in with Google accounts. It uses user's email address as an ID to store messaging data. No other user data is being stored.
 You may also use this app without logging in — your messages will still be stored as messages of a test user.
 
-# Storage
+## Storage
 
 Application uses Redux. Operates local storage wia [redux-persist](https://www.npmjs.com/package/redux-persist).
 User's data also is being saved to Firebase/Firestore database on every data update and is being loaded each time the user signs in.
 
 I use asynchronous Redux for authentication and database reading, other asynchronous code is written in Redux custom middleware functions.
 
-# Data format
+## Data format
 
 The main data is stored in two arrays — contacts and messages
 
@@ -50,7 +50,7 @@ messages: {
 
 — as long as messages have no unique id's the identificator for messages.items entry is a composite key of datetime and contact_id fields. I decided not to use id generator because composition of these two values will always be unique in my case.
 
-# loopholes
+## loopholes
 
 There are two simplifications made in this demo application
 
@@ -58,6 +58,6 @@ There are two simplifications made in this demo application
 
 2. Firestore is being operated in a test mode. This means it is opened to read and write data without applying any user authentication policy. Though users authenticate inside the app with Google tokens, the tokens are being stored in the app but don't apply on writing to database.
 
-# contact information
+## contact information
 
 You may write me on [email](mailto:illya.bondar.ukraine@gmail.com) or via [Telegram](https://t.me/iliyabinocular)
