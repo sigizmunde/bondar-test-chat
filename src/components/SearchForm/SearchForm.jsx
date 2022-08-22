@@ -1,28 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { DeleteIcon, FirstIcon, Form, Input } from "./SearchForm.styled";
 import icons from "../../image/icons.svg";
+import { FilterContext } from "../Layout/Layout";
 
-const SearchForm = ({ onSearch }) => {
-  const [searchString, setSearchString] = useState("");
-
-  useEffect(() => {
-    onSearch(searchString);
-  }, [searchString, onSearch]);
-
-  //   const clearForm = () => {
-  //     setSearchString("");
-  //   };
+const SearchForm = () => {
+  const { filter, setFilter } = useContext(FilterContext);
 
   const handleChange = (e) => {
-    setSearchString(e.target.value);
+    setFilter(e.target.value.trim());
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(searchString);
   };
 
-  const handleClear = () => setSearchString("");
+  const handleClear = () => setFilter("");
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -34,10 +26,10 @@ const SearchForm = ({ onSearch }) => {
         name="search"
         placeholder="Search or start new chat"
         autoComplete="off"
-        value={searchString}
+        value={filter}
         onChange={handleChange}
       ></Input>
-      {searchString.trim() !== "" && (
+      {filter !== "" && (
         <DeleteIcon onClick={handleClear}>
           <use href={icons + "#icon-clear"}></use>
         </DeleteIcon>
