@@ -14,12 +14,19 @@ export const USFormatDateTime = (datetimeString) => {
 export const USFormatDate = (datetimeString) => {
   try {
     const date = new Date(datetimeString);
+    const options = {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    };
 
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const year = date.getFullYear();
+    // const month = date.getMonth() + 1;
+    // const day = date.getDate();
+    // const year = date.getFullYear();
 
-    const formattedString = month + "/" + day + "/" + year;
+    // const formattedString = month + "/" + day + "/" + year;
+    const formattedString = date.toLocaleDateString("en-US", options);
+    console.log(formattedString);
     return formattedString;
   } catch (err) {
     console.error(err);

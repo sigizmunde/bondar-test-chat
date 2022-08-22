@@ -44,7 +44,9 @@ export const Name = styled.span`
 `;
 
 export const Time = styled.span`
+  min-width: 80px;
   margin: 0;
+  text-align: end;
   font-size: 12px;
   font-weight: 400;
   font-style: normal;
