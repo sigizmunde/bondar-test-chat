@@ -18,6 +18,8 @@ export const SidePanel = styled.section`
   border-right: var(--border);
   @media screen and (max-width: 620px) {
     position: fixed;
+    max-width: 620px;
+    width: 100%;
     height: 100%;
     z-index: 0;
   }
