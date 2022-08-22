@@ -2,12 +2,14 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getContacts, getMessages } from "../../redux/selectors";
 import Avatar from "../Avatar/Avatar";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import { USFormatDateTime } from "../../utils/formatDateTime";
 import {
   CaptionName,
   ChatMessage,
   ChatPanel,
   ChWindow,
+  ClearBtn,
   ContactPanel,
   FlexWrap,
   MessageText,
@@ -17,10 +19,11 @@ import {
 import SendForm from "../SendForm/SendForm";
 import { useContext, useEffect, useRef } from "react";
 import { FilterContext } from "../Layout/Layout";
+import icons from "../../image/icons.svg";
 
 const ChatWindow = () => {
   const { id } = useParams();
-  const filter = useContext(FilterContext);
+  const { filter, setFilter } = useContext(FilterContext);
 
   const contact = useSelector(getContacts).find(
     ({ id: contact_id }) => contact_id === id
@@ -58,8 +61,16 @@ const ChatWindow = () => {
           <Avatar src={avatar} alt="current chat avatar" online={online} />
         )}
         <CaptionName>{name}</CaptionName>
-        <Warn>{filter && ` — search results for "${filter}"`}</Warn>
+        <MobileMenu />
       </ContactPanel>
+      {filter && (
+        <Warn>
+          <span>{` search results for "${filter}"`} </span>
+          <ClearBtn onClick={() => setFilter("")}>
+            <use href={icons + "#icon-clear"}></use>
+          </ClearBtn>
+        </Warn>
+      )}
       <ChatPanel ref={scrollRef}>
         {messages.length > 0 &&
           messages.map(({ id, datetime, text, incoming }) => (

@@ -7,7 +7,7 @@ const SearchForm = () => {
   const { filter, setFilter } = useContext(FilterContext);
 
   const handleChange = (e) => {
-    setFilter(e.target.value.trim());
+    setFilter(e.target.value);
   };
 
   const handleSubmit = (e) => {

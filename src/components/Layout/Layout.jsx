@@ -55,7 +55,7 @@ const Layout = () => {
 
   useEffect(() => {
     setFilteredContacts(
-      contacts.filter(({ name }) => name.toLowerCase().includes(filter))
+      contacts.filter(({ name }) => name.toLowerCase().includes(filter.trim()))
     );
   }, [filter, contacts]);
 
@@ -64,7 +64,7 @@ const Layout = () => {
       generateListOfContacts({
         contacts,
         messages,
-        filter,
+        filter: filter.trim(),
       })
     );
   }, [filter, contacts, messages]);
@@ -75,7 +75,7 @@ const Layout = () => {
 
   return (
     <LayoutContainer>
-      <FilterContext.Provider value={filter}>
+      <FilterContext.Provider value={{ filter, setFilter }}>
         <SidePanel>
           <PanelHeader>
             <Login />

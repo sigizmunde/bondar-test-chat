@@ -16,4 +16,9 @@ export const SidePanel = styled.section`
   color: var(--main-color);
   background-color: var(--main-back-color);
   border-right: var(--border);
+  @media screen and (max-width: 620px) {
+    position: fixed;
+    height: 100%;
+    z-index: 0;
+  }
 `;

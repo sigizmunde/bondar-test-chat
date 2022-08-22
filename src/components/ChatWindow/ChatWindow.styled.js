@@ -7,6 +7,11 @@ export const ChWindow = styled.section`
   align-items: stretch;
   justify-content: flex-start;
   gap: 0;
+  @media screen and (max-width: 620px) {
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+  }
 `;
 
 export const ContactPanel = styled.div`
@@ -25,19 +30,28 @@ export const CaptionName = styled.p`
   font-weight: 500;
 `;
 
-export const Warn = styled.p`
+export const Warn = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0;
-  font-size: 18px;
+  padding: 12px;
+  font-size: 15px;
   font-weight: 400;
-  color: var(--accent-color);
+  color: var(--inverted-color);
+  background-color: var(--accent-color);
+`;
+
+export const ClearBtn = styled.svg`
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  fill: currentColor;
+  cursor: pointer;
 `;
 
 export const ChatPanel = styled.div`
   flex-grow: 1;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-end; 
-  gap: 32px; */
   padding: 12px;
   overflow-y: scroll;
   background-color: var(--textarea-color);

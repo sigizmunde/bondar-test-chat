@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin: 0;
   padding: 16px;
+  background-color: var(--secondary-back-color);
   & svg {
     position: absolute;
     box-sizing: content-box;
