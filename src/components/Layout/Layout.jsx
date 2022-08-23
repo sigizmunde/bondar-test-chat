@@ -58,7 +58,9 @@ const Layout = () => {
   // search by contacts
   useEffect(() => {
     setFilteredContacts(
-      contacts.filter(({ name }) => name.toLowerCase().includes(filter.trim()))
+      contacts.filter(({ name }) =>
+        name.toLowerCase().includes(filter.trim().toLowerCase())
+      )
     );
   }, [filter, contacts]);
 

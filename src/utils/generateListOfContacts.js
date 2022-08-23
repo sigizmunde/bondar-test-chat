@@ -20,7 +20,7 @@ const generateListNoFilter = (contacts, messages) => {
 
 const generateFilteredList = (contacts, messages, filter) => {
   const filteredList = messages.filter(({ text }) =>
-    text.toLowerCase().includes(filter)
+    text.toLowerCase().includes(filter.toLowerCase())
   );
   return filteredList.map(({ contact_id, datetime, text, incoming }) => {
     const contact = contacts.find(({ id }) => id === contact_id) || {
