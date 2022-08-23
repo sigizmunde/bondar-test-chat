@@ -5,6 +5,7 @@ import { db } from "../services/firebase";
 import { authSuccess } from "./authActions";
 import { removeUser } from "./authSlice";
 import { loadInitialUserData } from "./loadInitialUserData";
+import { loadDataAction } from "./loadDataAction";
 
 const updateFirebase = async (store) => {
   const { contacts, messages } = store.getState().persisted;
@@ -14,9 +15,9 @@ const updateFirebase = async (store) => {
     contacts,
     messages,
   })
-    .then((response) =>
-      console.log("Document written with response: ", response)
-    )
+    // .then((response) =>
+    //   console.log("Document written with response: ", response)
+    // )
     .catch((e) => console.error("Error adding document: ", e));
 };
 
@@ -26,13 +27,15 @@ const syncFirestoreMiddleware = (store) => (next) => (action) => {
     updateFirebase(store);
     return;
   }
-  if (action.type === authSuccess.type) {
-    loadInitialUserData(store, action.payload.user);
-    updateFirebase(store);
+  if (action.type === authSuccess.type || action.type === loadDataAction.type) {
+    loadInitialUserData(store, action.payload.user)
+      .then(() => updateFirebase(store))
+      .catch((err) => console.error(err));
   }
   if (action.type === removeUser.type) {
-    loadInitialUserData(store, null);
-    updateFirebase(store);
+    loadInitialUserData(store, null)
+      .then(() => updateFirebase(store))
+      .catch((err) => console.error(err));
   }
   next(action);
 };

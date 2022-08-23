@@ -9,11 +9,11 @@ export const loadInitialUserData = async (store, user) => {
   store.dispatch(setLoading(true));
   try {
     const response = await getDoc(doc(db, user_id, "chat"));
-    console.log("response: ", response);
+    // console.log("response: ", response);
     const data = response.exists()
       ? response.data()
       : { contacts: { items: [] }, messages: { items: [] } };
-    console.log("data: ", data);
+    // console.log("data: ", data);
     const { contacts, messages } = data;
     store.dispatch(overwriteContacts(contacts.items));
     store.dispatch(overwriteMessages(messages.items));
