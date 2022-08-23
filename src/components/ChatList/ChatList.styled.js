@@ -18,7 +18,8 @@ export const ContactLi = styled.li`
   height: 74px;
   padding: 16px;
   padding-left: 12px;
-  background-color: var(--main-back-color);
+  background-color: ${(param) =>
+    param.active ? "var(--active-item-color)" : "var(--main-back-color)"};
   border-bottom: var(--border);
   cursor: pointer;
 `;

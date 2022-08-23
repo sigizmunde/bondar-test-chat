@@ -5,7 +5,7 @@ export const SchList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  min-height: 156px;
+  min-height: 172px;
   max-height: 100%;
   overflow-y: scroll;
 `;
@@ -19,7 +19,8 @@ export const SearchContactLi = styled.li`
   height: 74px;
   padding: 16px;
   padding-left: 12px;
-  background-color: var(--main-back-color);
+  background-color: ${(param) =>
+    param.active ? "var(--active-item-color)" : "var(--main-back-color)"};
   border-bottom: var(--border);
   cursor: pointer;
 `;

@@ -40,7 +40,7 @@ const Layout = () => {
   const [contactList, setContactList] = useState([]);
 
   // notifications
-  const { id } = useParams();
+  const { id: idParam } = useParams();
 
   useEffect(() => {
     if (messages.length > 0) {
@@ -48,19 +48,21 @@ const Layout = () => {
       const { contact_id, text, datetime, incoming } = latestMessage;
       const timeThen = new Date(datetime);
       const timeNow = new Date();
-      if (incoming && contact_id !== id && timeNow - timeThen < 100) {
+      if (incoming && contact_id !== idParam && timeNow - timeThen < 100) {
         const sender = contacts.find(({ id }) => id === contact_id);
         toast(`${sender.name}: ${text}`);
       }
     }
-  }, [messages, contacts, id]);
+  }, [messages, contacts, idParam]);
 
+  // search by contacts
   useEffect(() => {
     setFilteredContacts(
       contacts.filter(({ name }) => name.toLowerCase().includes(filter.trim()))
     );
   }, [filter, contacts]);
 
+  // search by messages
   useEffect(() => {
     setContactList(
       generateListOfContacts({
@@ -89,13 +91,13 @@ const Layout = () => {
           {filter && filteredContacts?.length > 0 && (
             <>
               <MiddleHeading>Contacts found:</MiddleHeading>
-              <SearchList contacts={filteredContacts} />
+              <SearchList contacts={filteredContacts} currentId={idParam} />
             </>
           )}
           {filter && contacts?.length && (
             <MiddleHeading>Messages found:</MiddleHeading>
           )}
-          <ChatList chats={contactList} />
+          <ChatList chats={contactList} currentId={idParam} />
         </SidePanel>
         <Outlet />
       </FilterContext.Provider>

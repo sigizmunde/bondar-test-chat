@@ -9,14 +9,18 @@ import {
   Info,
 } from "./SearchList.styled";
 
-const SearchList = ({ contacts }) => {
+const SearchList = ({ contacts, currentId }) => {
   const navigate = useNavigate();
 
   return (
     <SchList>
       {contacts.length > 0 &&
         contacts.map(({ id, name, avatar, online }) => (
-          <SearchContactLi key={id} onClick={() => navigate(`/chat/${id}`)}>
+          <SearchContactLi
+            key={id}
+            onClick={() => navigate(`/chat/${id}`)}
+            active={id === currentId}
+          >
             <Avatar src={avatar} alt="avatar" online={online} />
             <Info>
               <Caption>

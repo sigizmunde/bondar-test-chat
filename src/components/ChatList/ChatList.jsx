@@ -12,7 +12,7 @@ import {
   Info,
 } from "./ChatList.styled";
 
-const ChatList = ({ chats }) => {
+const ChatList = ({ chats, currentId }) => {
   const navigate = useNavigate();
 
   return (
@@ -30,6 +30,7 @@ const ChatList = ({ chats }) => {
             <ContactLi
               key={id + datetime}
               onClick={() => navigate(`/chat/${id}`)}
+              active={id === currentId}
             >
               <Avatar src={avatar} alt="avatar" online={online} />
               <Info>
