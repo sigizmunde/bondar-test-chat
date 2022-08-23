@@ -43,13 +43,15 @@ const Layout = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const { contact_id, text, datetime, incoming } =
-      messages[messages.length - 1];
-    const timeThen = new Date(datetime);
-    const timeNow = new Date();
-    if (incoming && contact_id !== id && timeNow - timeThen < 100) {
-      const sender = contacts.find(({ id }) => id === contact_id);
-      toast(`${sender.name}: ${text}`);
+    if (messages.length > 0) {
+      const latestMessage = messages[messages.length - 1];
+      const { contact_id, text, datetime, incoming } = latestMessage;
+      const timeThen = new Date(datetime);
+      const timeNow = new Date();
+      if (incoming && contact_id !== id && timeNow - timeThen < 100) {
+        const sender = contacts.find(({ id }) => id === contact_id);
+        toast(`${sender.name}: ${text}`);
+      }
     }
   }, [messages, contacts, id]);
 
