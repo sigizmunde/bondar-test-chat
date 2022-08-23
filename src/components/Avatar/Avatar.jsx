@@ -4,7 +4,7 @@ import icons from "../../image/icons.svg";
 const Avatar = ({ src, alt, online }) => {
   return (
     <AvatarWrapper>
-      <img src={src} alt={alt} />
+      <img src={src || require("../../image/noavatar.png")} alt={alt} />
       {online && (
         <svg>
           <use href={icons + "#icon-checkmark"}></use>
