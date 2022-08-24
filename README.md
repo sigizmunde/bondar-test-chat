@@ -2,7 +2,7 @@
 
 This project is my test task for a front-end internship appliance
 
-It is created with [Create React App](https://github.com/facebook/create-react-app).
+It is created with [React](https://reactjs.org/).
 
 ## General info
 
