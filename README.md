@@ -1,6 +1,6 @@
 # Test Chat
 
-This project is a test task for a front-end internship appliance
+This project is my test task for a front-end internship appliance
 
 It is created with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -56,11 +56,14 @@ messages: {
 
 ## loopholes
 
-There are two simplifications made in this demo application
+There are few simplifications made in this demo application
 
 1. Firebase/Firestore is used for duplicating user messaging data on every update and storing it till the next time the user will log in. This means, if the user is logged on several instances of the app, every instance will overwrite the database independently. The instance of data with the latest message will be stored, other instances will lose their data after shutting down.
 
 2. Firestore is being operated in a test mode. This means it is opened to read and write data without applying any user authentication policy. Though users authenticate inside the app with Google tokens, the tokens are being stored in the app but don't apply on writing to database.
+
+3. Not to overcompicate this demo uses simple timout function to emulate chat response. This leads to some funny «buggy» effects — you may write a message then quickly log out/log in as another user — and then get the answer in that new account. Or even not get any answer by reloading page right after sending.
+I think, that is totally ok for such a brief demo.
 
 ## contact information
 
