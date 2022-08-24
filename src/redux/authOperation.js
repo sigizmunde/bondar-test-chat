@@ -20,6 +20,6 @@ export const authOperation = () => (dispatch, getState) => {
     })
     .catch((err) => {
       dispatch(authReject(err));
-      console.log("error occured");
+      console.log("this error is caught");
     });
 };

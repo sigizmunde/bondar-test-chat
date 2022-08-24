@@ -33,7 +33,7 @@ const ChatWindow = () => {
     : { name: "", avatar: "", online: false };
   const messages = useSelector(getMessages).filter(
     ({ contact_id, text }) =>
-      contact_id === id && text.toLowerCase().includes(filter.toLowerCase())
+      contact_id === id && text?.toLowerCase().includes(filter.toLowerCase())
   );
 
   const scrollRef = useRef();
