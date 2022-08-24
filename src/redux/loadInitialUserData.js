@@ -8,9 +8,7 @@ export const loadInitialUserData = async (store, user) => {
   const user_id = user ? user.email : "test_user";
   store.dispatch(setLoading(true));
   try {
-    const response = await getDoc(doc(db, user_id, "chat")).catch((err) =>
-      console.warn(err)
-    );
+    const response = await getDoc(doc(db, user_id, "chat"));
     // console.log("response: ", response.data());
     const resData = response.exists() ? response.data() : null;
     const data = resData
@@ -20,8 +18,8 @@ export const loadInitialUserData = async (store, user) => {
     const { contacts, messages } = data;
     store.dispatch(overwriteContacts(contacts.items));
     store.dispatch(overwriteMessages(messages.items));
-  } catch (e) {
-    console.error("Error adding document: ", e);
+  } catch (err) {
+    console.error("Error on loading initial data: ", err);
   }
   store.dispatch(setLoading(false));
 };
